@@ -1,40 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <link rel="stylesheet" href="styles.css">
-  <title>랭킹보드</title>
-</head>
-<body>
-  <div id="gr">
-    <div class="kiosk-container">
-      <header class="rank-header">
-        <h1>랭킹보드</h1>
-        <div class="tabs">
-          <div class="tab active" id="tab-daily">일간</div>
-          <div class="tab" id="tab-weekly">주간</div>
-          <div class="tab" id="tab-monthly">월간</div>
-        </div>
-        <div class="period-gauge" aria-hidden="true">
-          <div class="period-gauge-fill" id="period-gauge-fill"></div>
-        </div>
-      </header>
-      <div class="grid-container" id="leaderboard-grid"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>랭킹보드</title>
+  </head>
+  <body>
+    <div id="gr">
+      <div class="kiosk-container">
+        <header class="rank-header">
+          <h1>랭킹보드</h1>
+          <div class="tabs">
+            <div class="tab active" id="tab-daily">일간</div>
+            <div class="tab" id="tab-weekly">주간</div>
+            <div class="tab" id="tab-monthly">월간</div>
+          </div>
+          <div class="period-gauge" aria-hidden="true">
+            <div class="period-gauge-fill" id="period-gauge-fill"></div>
+          </div>
+        </header>
+        <div class="grid-container" id="leaderboard-grid"></div>
+        <footer class="rank-footer">
+          <img
+            src="/kiosk_game/assets/logo.png"
+            alt="안성시 관광 로고"
+            class="rank-footer-logo"
+            loading="eager"
+            decoding="async"
+          />
+        </footer>
+      </div>
     </div>
-  </div>
 
-  <script>
-    function resizeKiosk() {
-      var vw = document.documentElement.clientWidth || window.innerWidth;
-      var vh = document.documentElement.clientHeight || window.innerHeight;
-      var scale = Math.min(vw / 2160, vh / 3840);
-      var gr = document.getElementById('gr');
-      gr.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
-    }
-    window.addEventListener('resize', resizeKiosk);
-    resizeKiosk();
-  </script>
-  <script src="script.js?v=20260530"></script>
-</body>
+    <script>
+      function resizeKiosk() {
+        var vw = document.documentElement.clientWidth || window.innerWidth;
+        var vh = document.documentElement.clientHeight || window.innerHeight;
+        var scale = Math.min(vw / 2160, vh / 3840);
+        var gr = document.getElementById("gr");
+        gr.style.transform = "translate(-50%, -50%) scale(" + scale + ")";
+      }
+      window.addEventListener("resize", resizeKiosk);
+      resizeKiosk();
+    </script>
+    <script src="script.js?v=20260604"></script>
+  </body>
 </html>
