@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sqlite3 ranking.db \".schema rankings\")",
+      "Bash(sqlite3 ranking.db \"SELECT * FROM rankings LIMIT 5;\")",
+      "Bash(curl -s http://localhost:3000/api/ranking)",
+      "Bash(curl -s -X POST http://localhost:3000/api/ranking -H \"Content-Type: application/json\" -d '{\"nickname\":\"실시간테스트\",\"score\":77,\"game_index\":2}')",
+      "Bash(sqlite3 ranking.db \"SELECT id, game_index, nickname, score, created_at FROM rankings WHERE nickname = '실시간테스트';\")",
+      "Bash(sqlite3 ranking.db \"DELETE FROM rankings WHERE nickname = '실시간테스트';\")"
+    ]
+  }
+}
